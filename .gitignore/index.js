@@ -33,11 +33,4 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
     }
 });
 
-bot.on('guilMemberAdd', member => {
-    member.createDM().then(channel => {
-        return channel.send('Bienvenue sur mon serveur ' + member.displayName);
-    }).catch(console.error)
-    
-});
-
 bot.login(process.env.TOKEN);
