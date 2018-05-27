@@ -30,6 +30,16 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
                 channel.send('test')
             });
         };
+        if(message.content === 'commands') {
+            bot.channels.send(
+`Si tu veux une liste des commandes, tapes ```/commands help !```  :) !
+`);
+            if(message.content === 'help') {
+                bot.channels.send(
+`Nous n'avons actuellement pas de commandes disponibles. :(
+`);
+            });
+        };                      
     }
 });
 
