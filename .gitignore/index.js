@@ -6,8 +6,9 @@ const bot = new discord.Client();
 const PREFIX = "/";
 
 /* Evenement / Code */
-bot.on('ready', function() {
+bot.on('ready', () => {
     console.log("Je suis Ready !");
+    bot.channels.get("450336414891245569").send("Près a coder ");
 });
 
 bot.on('message', message => {
