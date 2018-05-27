@@ -27,7 +27,7 @@ La prise de créneau a une deadline qui est fixé au Dimanche à 21h.
 Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est bien sur le planning
 `);
         }
-        else if(message.content === '/planning') {
+        else if(message.content === '/test') {
             message.channel.send("Commande de l'utilisateur: " + message.author.username);
             message.author.createDM().then(channel => {
                 channel.send('test')
