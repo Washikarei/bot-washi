@@ -1,28 +1,36 @@
+/* Bibliotheque discord.js */
 const discord = require('discord.js');
+
+/* Variables */
 const bot = new discord.Client();
-const prefix = ("/");
-const help_embed = new discord.RichEmbed()
-    .setColor("#00E329")
-    .setDescription("Bot de Washi")
-    .addField("Crée par", "@Washi#3742")
-    .addField("Crée le", "25/06/2018")
-    .addField("Version", "1.0.0")
-    .addField("Commande du Bot !", "-   /Help : Affiche les commandes d'aide du bot !");
+const PREFIX = "/";
 
-
-bot.on('ready', () => {
+/* Evenement / Code */
+bot.on('ready', function() {
     console.log("Je suis Ready !");
-  });
-
-bot.on('ready', function (){
-    bot.user.setPresence({game: {name: 'Bot de Washi (Test)'}}).catch(console.error);
 });
 
 bot.on('message', message => {
-    if (message.content === prefix + "help"){
-        message.channel.send(help_embed)
-        console.log("Commande d'aide demandé.");
-    };
-})
+    if(message.content[0] === PREFIX) {
+        if(message.content === '!planning') {
+            message.channel.send(
+                `Comme toutes les semaines communiquer moi vos disponibilité pour la semaine qui arrive.
+                Pour me donner vos dispo faite comme ceci, ça me donneras une meilleur visibilité svp.
+                **[Jours] - [Heure a Heure] - [Jeu]**
+                
+                La prise de créneau a une deadline qui est fixé au Dimanche à 21h.
+                Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est bien sur le planning
+                `);
+            bot.channels("450336414891245569").send("Commande de l'utilisateur " + message.author.username);
+        }
+    }
+});
+
+bot.on('guilMemberAdd', member => {
+    member.createDM().then(channel => {
+        return channel.send('Bienvenue sur mon serveur ' + member.displayName);
+    }).catch(console.error)
+    
+});
 
 bot.login(process.env.TOKEN);
