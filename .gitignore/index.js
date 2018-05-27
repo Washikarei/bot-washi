@@ -21,7 +21,7 @@ bot.on('message', message => {
                 La prise de créneau a une deadline qui est fixé au Dimanche à 21h.
                 Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est bien sur le planning
                 `);
-            bot.channels("450336414891245569").send("Commande de l'utilisateur " + message.author.username);
+            bot.channels.get("450336414891245569").send("Commande de l'utilisateur " + message.author.username);
         }
     }
 });
