@@ -13,7 +13,7 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
     if(message.content[0] === PREFIX) {
-        if(message.content === '!planning') {
+        if(message.content === '/planning') {
             message.channel.send(
                 `Comme toutes les semaines communiquer moi vos disponibilité pour la semaine qui arrive.
                 Pour me donner vos dispo faite comme ceci, ça me donneras une meilleur visibilité svp.
