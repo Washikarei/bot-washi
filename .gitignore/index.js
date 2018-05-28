@@ -31,7 +31,7 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
             });
         };
         maliste = message.content.split(" -")
-        if(maliste[0] === '/sondage1') {
+        if(maliste[0] === '/sondage') {
                 choix1 = maliste[1]
                 choix2 = maliste[2]
                 choix3 = maliste[3]
