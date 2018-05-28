@@ -30,21 +30,35 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
                 channel.send('test')
             });
         };
-                maliste = message.content.split(" -")
-        if(maliste[0] === '/sondage') {
-            choix1 = maliste[1]
-            choix2 = maliste[2]
-            choix3 = maliste[3]
-            message.delete()
-            bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:arrow_forward: *__"+choix1+"__*\n ----------------------- \n:red_circle: **"+choix2+"** ou :large_blue_circle: **"+""+choix3+"**\n -----------------------")
-            .then(function (message) {
-                message.react("🔴")
-                .then(message.react("🔵"))
-                message.pin()
-            }).catch(function() {
-              //Something
-             });
-        }
+        maliste = message.content.split(" -")
+        if(maliste[0] === '/sondage1') {
+                choix1 = maliste[1]
+                choix2 = maliste[2]
+                choix3 = maliste[3]
+                message.delete()
+            if(message.member.roles.has("142615029471117312")) {
+                if(message.content.split(" -").length === 4) {
+                    bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:arrow_forward: *__"+choix1+"__*\n ----------------------- \n:red_circle: **"+choix2+"** ou :large_blue_circle: **"+""+choix3+"**\n -----------------------")
+                    .then(function (message) {
+                        message.react("🔴")
+                        .then(message.react("🔵"))
+                        message.pin()
+                    }).catch(function() {
+                    //Something
+                    })
+                }
+                else {
+                    message.author.createDM().then(channel => {
+                        channel.send (":thinking: Veuillez vérifier que votre commande respecte le format :\n ```/sondage -Question -Choix1 -Choix2```")
+                    })
+                }
+            }
+            else {
+                message.author.createDM().then(channel => {
+                    channel.send ("Vous n'avez pas les droits nécessaire à la création d'un sondage. :cry:")
+                })
+            }
+        };
         if(message.content ==='/admin') {
             if(message.member.roles.has("142615029471117312")) {
                 bot.channels.get("450336414891245569").send(`Bravo ! Vous êtes administrateur !`) }
