@@ -35,10 +35,10 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
             choix1 = maliste[1]
             choix2 = maliste[2]
             message.delete()
-            bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:white_check_mark: **"+choix1+"** ou :negative_squared_cross_mark: **"+""+choix2+"**\n -----------------------")
+            bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:red_circle: **"+choix1+"** ou :large_blue_circle: **"+""+choix2+"**\n -----------------------")
             .then(function (message) {
-                message.react("✅")
-                .then(message.react("❎"))
+                message.react("🔴")
+                .then(message.react("🔵"))
                 message.pin()
             }).catch(function() {
               //Something
