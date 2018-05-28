@@ -34,8 +34,9 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
         if(maliste[0] === '/sondage') {
             choix1 = maliste[1]
             choix2 = maliste[2]
+            choix3 = maliste[3]
             message.delete()
-            bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:red_circle: **"+choix1+"** ou :large_blue_circle: **"+""+choix2+"**\n -----------------------")
+            bot.channels.get("450336414891245569").send(":notepad_spiral: ***__SONDAGE__*** :notepad_spiral:\n ----------------------- \n:arrow_forward: *__"+choix1+"__*\n ----------------------- \n:red_circle: **"+choix2+"** ou :large_blue_circle: **"+""+choix3+"**\n -----------------------")
             .then(function (message) {
                 message.react("🔴")
                 .then(message.react("🔵"))
