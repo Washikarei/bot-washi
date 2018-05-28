@@ -44,6 +44,12 @@ Un petit :white_check_mark:  seras mis sur votre message pour indiqué qu'il est
             }).catch(function() {
               //Something
              });
+        }
+        if(message.content ==='/admin') {
+            if(message.member.roles.has("142615029471117312")) {
+                bot.channels.get("450336414891245569").send(`Bravo ! Vous êtes administrateur !`) }
+            else {
+            bot.channels.get("450336414891245569").send(`Oh ! Dommage, vous n'êtes pas administrateur ! :(`)   }
         }  
     }
 });
