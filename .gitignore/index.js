@@ -7,8 +7,8 @@ const PREFIX = "/";
 
 /* Evenement / Code */
 bot.on('ready', () => {
-    console.log("Je suis Ready !");
-    bot.channels.get("450336414891245569").send("Près a coder ");
+    console.log("Here we go !");
+    bot.channels.get("450336414891245569").send("Prêt à coder, Sensei ! ;)");
 });
 
 bot.on('message', message => {
