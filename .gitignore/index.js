@@ -35,7 +35,6 @@ bot.on('ready', () => {
 });
 
 
-
 bot.on('message', message => {
     console.log(message)
     if(message.content[0] === PREFIX) {
