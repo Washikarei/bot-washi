@@ -93,7 +93,7 @@ bot.on('message', message => {
                  bot.channels.get("450336414891245569").send(`Oh ! Dommage, vous n'êtes pas administrateur ! :(`)   }
         };        
     }
-});
+};
 
 
 bot.login(process.env.TOKEN);
